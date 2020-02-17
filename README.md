@@ -23,7 +23,7 @@ How To run the command interpreter:
 $ ./console.py
 ```
 
-## Examples
+## :pushpin: Examples
 Interactive mode:
 ```
 $ ./console.py
@@ -31,8 +31,8 @@ $ ./console.py
 Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
-(hbnb) 
-(hbnb) 
+(hbnb)
+(hbnb)
 (hbnb) quit
 $
 ```
@@ -53,7 +53,6 @@ $ cat test_help | ./console.py
 Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
-(hbnb) 
+(hbnb)
 $
 ```
-
