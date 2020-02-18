@@ -54,12 +54,12 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, args):
     """
-"""
-pass
+    """
+    pass
 
     def do_destroy(self, args):
     """ Delete instance based on the class name and id
-"""
+    """
         if not args:
             print("** class name missing **")
         elif args[0] not in HBNBCommand.__classes_names:
@@ -70,7 +70,7 @@ pass
 
     def do_show(self, args):
     """ Print the string based on the class name and id.
-"""
+    """
     Arg = shlex.split(args)
         if len(Arg) == 0:
             print("** class name missing **")
@@ -87,5 +87,5 @@ pass
                 print("** no instance found **")
 
 if __name__ == "__main__":
-    interpreter = HBNBCommand()
-    interpreter.cmdloop()
+    HBNBCommand().cmdloop()
+                        
