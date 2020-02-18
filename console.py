@@ -52,14 +52,9 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class doesn't exist **")
 
-    def do_all(self, args):
-    """
-    """
-    pass
-
     def do_destroy(self, args):
-    """ Delete instance based on the class name and id
-    """
+        """ Delete instance based on the class name and id
+        """
         if not args:
             print("** class name missing **")
         elif args[0] not in HBNBCommand.__classes_names:
@@ -69,22 +64,27 @@ class HBNBCommand(cmd.Cmd):
         data = storage.all()
 
     def do_show(self, args):
-    """ Print the string based on the class name and id.
-    """
-    Arg = shlex.split(args)
-        if len(Arg) == 0:
+        """ Print the string based on the class name and id.
+        """
+        Arg = shlex.split(args)
+            if len(Arg) == 0:
             print("** class name missing **")
-        elif len(Arg) >= 1 and Arg[0] not in NClass:
+            elif len(Arg) >= 1 and Arg[0] not in NClass:
             print("** class doesn't exist **")
-        elif len(Arg) == 1:
-            print("** instance id missing **")
-        else:
-            dict = storage.all()
-            name_clas = Arg[0] + "." + Arg[1]
-            if name_clas in dict:
-                print(dict[name_clas])
+            elif len(Arg) == 1:
+                print("** instance id missing **")
             else:
-                print("** no instance found **")
+                dict = storage.all()
+                name_clas = Arg[0] + "." + Arg[1]
+                if name_clas in dict:
+                    print(dict[name_clas])
+                else:
+                    print("** no instance found **")
+
+    def do_all(self, args):
+        """
+        """
+        pass
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
