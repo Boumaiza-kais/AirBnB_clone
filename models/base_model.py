@@ -28,7 +28,7 @@ class BaseModel:
             storage.new(self)
 
     def to_dict(self):
-        """ to_dict definition """
+        """ to_dict definition a dictionary containing all keys/values of the instance """
         dic = self.__dict__.copy()
        
         dic.update({"__class__": __class__.__name__})
@@ -37,11 +37,11 @@ class BaseModel:
         return dic
    
     def __str__(self):
-        """ str definition """
+        """ str Generate a string object """
         return("[{}] ({}) {}".format(name_c, self.id, self.__dict__))
 
     def save(self):
-        """ Save definition """
+        """ Public instance to updated with the current datetime """
         self.updated_at = datetime.now()
         storage.save()
 
