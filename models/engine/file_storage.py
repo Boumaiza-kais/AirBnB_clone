@@ -11,20 +11,21 @@ State = state.State
 City = city.City
 Amenity = amenity.Amenity
 Review = review.Review
-name_class = ["BaseModel", "City", "State", "Place",
-                            "Amenity", "Review", "User"]
+name_class = ["BaseModel", "City", "State",
+              "Place", "Amenity", "Review", "User"]
 
 
 class FileStorage:
-        """ Create private class variables """
-            __file_path = "objects.json"
-            __objects = {}
+    """
+    """
+    __file_path = "file.json"
+    __objects = {}
 
     def all(self):
-        """ Return dictionary __objects
+        """
         """
         return FileStorage.__objects
-    
+
     def new(self, obj):
         """ sets  the obj with key in __objects
         """
@@ -34,15 +35,17 @@ class FileStorage:
         FileStorage.__objects[clas_id] = obj
 
     def save(self):
+        """ file storage
         """
-        """
-        to_store = {obj: FileStorage.__objects[obj].to_dict() for obj in FileStorage.__objects.keys()}
-        with open(FileStorage.__file_path, "w") as f:
-            json.dump(to_store, f)
+        dict_to_json = {}
+        for key, value in FileStorage.__objects.items():
+            dict_to_json[key] = value.to_dict()
+        with open(FileStorage.__file_path, "w", encoding='utf-8') as fil:
+            dump(dict_to_json, fil)
 
     def reload(self):
         """ if (__file_path) exists deserializes JSON file to __objects
-         elif , do nothing. If the file not exist,
+            elif , do nothing. If the file not exist,
         """
         dic_obj = {}
         FileStorage.__objects = {}
