@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" Place class """
+
 import uuid
 from datetime import datetime
 from models import storage
@@ -18,10 +20,3 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenity_ids = []
-
-    def __init__(self, *args, **kwargs):
-        '__init__ method for place'
-        if len(kwargs) > 0:
-            self.__dict__ = kwargs
-        else:
-            super().__init__(self)
