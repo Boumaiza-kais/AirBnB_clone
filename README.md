@@ -8,6 +8,7 @@ The users like the administrator of the app Airbnb clone has the posibility of t
  * Cities
  * Amenities
  * Reviews
+![alt text](https://media2.woopic.com/api/v1/images/661%2Fmagic-article-actu%2F68f%2Fbd4%2F3bfe7f39a75a57971af0ad4edc%2Flocations-touristiques-airbnb-annonce-avoir-reverse-58-millions-d-euros-de-taxe-de-sejour-aux-communes-francaises%7C68fbd43bfe7f39a75a57971af0ad4edc.jpg)
  
  
 ## Installation
