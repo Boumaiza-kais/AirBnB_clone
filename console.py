@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Class HBNBComand a program called console.py 
+"""Class HBNBComand a program called console.py
 that contains the entry point of the command interpreter
 """
 import cmd
@@ -66,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, args):
         """ Print the string based on the class name and id.
         """
-        if  not len(arg):
+        if not len(arg):
             print("** class name missing **")
             return
         if arg not in HBNBCommand.__classes_names:
