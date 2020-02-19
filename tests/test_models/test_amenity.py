@@ -17,8 +17,8 @@ class Test_Amenity(unittest.TestCase):
         result = pep8style.check_files(['models/amenity.py'])
         self.assertEqual(result.total_errors, 0, "Check pep8")
 
-    def test_attributes_Amenity(self):
-        """Amenity attibutes"""
+    def test_Amenity_dict(self):
+        """Amenity_dict"""
         self.assertTrue('id' in self.amenity.__dict__)
         self.assertTrue('created_at' in self.amenity.__dict__)
         self.assertTrue('updated_at' in self.amenity.__dict__)
