@@ -8,7 +8,10 @@ The users like the administrator of the app Airbnb clone has the posibility of t
  * Cities
  * Amenities
  * Reviews
-![alt text](https://media2.woopic.com/api/v1/images/661%2Fmagic-article-actu%2F68f%2Fbd4%2F3bfe7f39a75a57971af0ad4edc%2Flocations-touristiques-airbnb-annonce-avoir-reverse-58-millions-d-euros-de-taxe-de-sejour-aux-communes-francaises%7C68fbd43bfe7f39a75a57971af0ad4edc.jpg)
+
+
+![alt text](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUZGDONYM4%2F20200218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200218T225331Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=536427b6996c65aa9a86d8b6e68bc832b99e2421ad563c04d3fd1d57c463f50f)
+
  
  
 ## Installation
