@@ -29,14 +29,17 @@ class BaseModel:
 
     def to_dict(self):
         """ to_dict definition """
+        
         dic = {}
         for key, item in self.__dict__.items():
             if key in ['created_at', 'updated_at']:
-                dic[key] = item.isoformat()
-            else:
                 dic[key] = item
+
         dic['__class__'] = self.__class__.__name__
+        dic['created_at'] = self.created_at.isoformat()
+        dic['updated_at'] = self.updated_at.isoformat()
         return dic
+
 
     def __str__(self):
         """ str definition """
