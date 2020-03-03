@@ -1,33 +1,40 @@
 #!/usr/bin/python3
-""" Tests Amenity """
-
+"""
+Amenity Class Unittest
+"""
 import unittest
-import os
-import pep8
-import datetime
-from models import amenity
-Amenity = amenity.Amenity
+import models
+from models.amenity import Amenity
 
-class Test_Amenity(unittest.TestCase):
-    """ Tests amenity """
 
-    def test_pep8(self):
-        """ Tests the pep8 """
-        pep8style = pep8.StyleGuide(quiet=True)
-        result = pep8style.check_files(['models/amenity.py'])
-        self.assertEqual(result.total_errors, 0, "Check pep8")
+class TestAmenityClass(unittest.TestCase):
+    """
+    testing amenity class
+    """
 
-    def test_Amenity_dict(self):
-        """Amenity_dict"""
-        self.assertTrue('id' in self.amenity.__dict__)
-        self.assertTrue('created_at' in self.amenity.__dict__)
-        self.assertTrue('updated_at' in self.amenity.__dict__)
-        self.assertTrue('name' in self.amenity.__dict__)
-   
-    def test_save_Amenity(self):
-        """Amenity save"""
-        self.amenity.save()
-        self.assertNotEqual(self.amenity.created_at, self.amenity.updated_at)
+    def test_attr(self):
+        """
+        amenity test
+        """
+        self.one = Amenity()
+        self.assertTrue(hasattr(self.one, "name"))
+        self.assertFalse(hasattr(self.one, "area"))
+
+    def test_value(self):
+        """
+        test amenity value type
+        """
+        self.one = Amenity()
+        self.assertEqual(self.one.name, "")
+        self.assertFalse(self.one.name, "under the bridge")
+
+    def test_type(self):
+        """
+        amenity test type
+        """
+        self.one = Amenity()
+        self.assertEqual(type(self.one.name), str)
+        self.assertNotEqual(type(self.one.name), list)
 
 if __name__ == '__main__':
     unittest.main()

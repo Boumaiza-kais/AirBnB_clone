@@ -81,22 +81,25 @@ class HBNBCommand(cmd.Cmd):
         print("** no instance found **")
 
     def do_all(self, args):
-        """ Prints all str representation of all instances """
-        split_args = shlex.split(args)
-        n_list = []
-        dict_json = models.storage.all()
-        if args:
-            try:
-                for key in models.storage.all():
-                    if split_args[0] == key.split('.')[0]:
-                        n_list.append(str(dict_json[key]))
-                print(n_list)
-            except Exception:
-                print("** class doesn't exist **")
-        else:
+        """Prints string representations of instances"""
+        args = shlex.split(arg)
+        obj_list = []
+        if len(args) == 0:
+            for value in models.storage.all().values():
+                obj_list.append(str(value))
+            print("[", end="")
+            print(", ".join(obj_list), end="")
+            print("]")
+        elif args[0] in classes:
             for key in models.storage.all():
-                n_list.append(str(models.storage.all()[key]))
-            print(n_list)
+                if args[0] in key:
+                    obj_list.append(str(models.storage.all()[key]))
+            print("[", end="")
+            print(", ".join(obj_list), end="")
+            print("]")
+        else:
+            print("** class doesn't exist **")
+
 
     def do_update(self, args):
         """ Updates an instance based on the class name and id """

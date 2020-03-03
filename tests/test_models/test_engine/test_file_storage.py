@@ -1,28 +1,86 @@
 #!/usr/bin/python3
-"""test file storage"""
+"""
+Unit Test for filestorage
+"""
 import unittest
-import pep8
-import json
+import models
 import os
-from models.base_model import BaseModel
-from models.user import User
-from models.state import State
-from models.city import City
-from models.amenity import Amenity
-from models.place import Place
-from models.review import Review
+from models import storage
+from models.engine.file_storage import FileStorage
 
 
 class TestFileStorage(unittest.TestCase):
-    ''' Test File storage '''
+    """
+    Tests the file storage
+    """
+    def setUp(self):
+        """
+        Setup
+        """
+        self.ikea = FileStorage()
 
-    def test_pep8_FileStorage(self):
-        """Tests pep8 style"""
-        style = pep8.StyleGuide(quiet=True)
-        p = style.check_files(['models/engine/file_storage.py'])
-        self.assertEqual(p.total_errors, 0, "Check pep8")
+    def tear_down(self):
+        """
+        tear down
+        """
+        if os.path.exists("file.json"):
+            try:
+                os.remove("file.json")
+            except BaseException:
+                pass
+
+    def test_file_storage(self):
+        """
+        test for filestorage
+        """
+        self.assertFalse(hasattr(self.ikea, "fake_id"))
 
 
+class TestDocumentation(unittest.TestCase):
+    """
+    class to test documentation
+    """
 
-if __name__ == "__main__":
+    def test_doc_class(self):
+        """
+        test class
+        """
+        expected = ' filestorage class '
+        actual = FileStorage.__doc__
+        self.assertEqual(expected, actual)
+
+    def test_all(self):
+        """
+        test all function
+        """
+        expected = ' defining all '
+        actual = FileStorage.all.__doc__
+        self.assertEqual(expected, actual)
+
+    def test_new(self):
+        """
+        test new function
+        """
+        expected = ' defining new '
+        actual = FileStorage.new.__doc__
+        self.assertEqual(expected, actual)
+
+    def test_save(self):
+        """
+        test class
+        """
+        expected = ' defining save '
+        actual = FileStorage.save.__doc__
+        self.assertEqual(expected, actual)
+
+    def test_reload(self):
+        """
+        test reload function
+        """
+        expected = ' defining reload '
+        actual = FileStorage.reload.__doc__
+        self.assertEqual(expected, actual)
+
+
+if __name__ == '__main__':
     unittest.main()
