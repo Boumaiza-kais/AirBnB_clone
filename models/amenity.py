@@ -1,11 +1,12 @@
-#!/usr/bin/python3
-""" Amenity class """
-
-import uuid
-from datetime import datetime
+#!/usr/bin/python
+"""Amenity class"""
 from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    """ Amenity class """
+    """Amenity class"""
     name = ""
+
+    def __init__(self, *args, **kwargs):
+        """initializes Amenity class"""
+        super().__init__(*args, **kwargs)

@@ -1,13 +1,10 @@
-#!/usr/bin/python3
-""" Place class """
-
-import uuid
-from datetime import datetime
+#!/usr/bin/python
+""" class Place"""
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """ Place class """
+    """Place class"""
     city_id = ""
     user_id = ""
     name = ""
@@ -19,3 +16,7 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenity_ids = []
+
+    def __init__(self, *args, **kwargs):
+        """initializes Place class"""
+        super().__init__(*args, **kwargs)

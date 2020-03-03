@@ -1,12 +1,13 @@
-#!/usr/bin/python3
-""" City class """
-
-import uuid
-from datetime import datetime
+#!/usr/bin/python
+""" class City"""
 from models.base_model import BaseModel
 
 
 class City(BaseModel):
-    """ City class """
+    """city class """
     state_id = ""
     name = ""
+
+    def __init__(self, *args, **kwargs):
+        """initializes city"""
+        super().__init__(*args, **kwargs)

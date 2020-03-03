@@ -1,14 +1,14 @@
-#!/usr/bin/python3
-"""Review class
-"""
-
-import uuid
-from datetime import datetime
+#!/usr/bin/python
+""" Review Class"""
 from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    """ Review class """
+    """class Review"""
     place_id = ""
     user_id = ""
     text = ""
+
+    def __init__(self, *args, **kwargs):
+        """initializes Review class"""
+        super().__init__(*args, **kwargs)

@@ -1,11 +1,12 @@
-#!/usr/bin/python3
-""" State class """
-
-import uuid
-from datetime import datetime
+#!/usr/bin/python
+""" State class"""
 from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """ State class """
+    """class State"""
     name = ""
+
+    def __init__(self, *args, **kwargs):
+        """initializes state class"""
+        super().__init__(*args, **kwargs)
